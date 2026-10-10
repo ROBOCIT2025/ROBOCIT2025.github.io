@@ -1,0 +1,627 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#06140d">
+<meta name="description" content="ارتباط با ROBOCIT">
+<title>ارتباط با ما</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #06140d;
+  --green: #48f59a;
+  --mint: #c8ffe0;
+  --text: #f1fff6;
+  --muted: #91ac9b;
+  --border: #5effa727;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Vazirmatn, Tahoma, sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 15% 10%, #16a65c29, transparent 38%),
+    radial-gradient(ellipse at 90% 75%, #16a65c20, transparent 36%),
+    linear-gradient(145deg, #06140d, #092218 55%, #041008);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  opacity: .13;
+  background-image:
+    linear-gradient(#9bffbd16 1px, transparent 1px),
+    linear-gradient(90deg, #9bffbd16 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(#000, transparent 90%);
+}
+
+.orb {
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  filter: blur(95px);
+  opacity: .17;
+  background: #36ff8b;
+  animation: float 12s ease-in-out infinite alternate;
+}
+
+.orb.a { top: 3%; left: -170px; }
+.orb.b { right: -170px; bottom: 0; animation-delay: -6s; }
+
+.container {
+  width: min(1120px, calc(100% - 36px));
+  margin: auto;
+}
+
+nav {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: #052013;
+  font-size: 25px;
+  background: linear-gradient(135deg, #c7ffdc, #27db80);
+  box-shadow: 0 0 32px #39f38b25;
+  transition: .35s;
+}
+
+.brand:hover .logo {
+  transform: rotate(-10deg) scale(1.08);
+  box-shadow: 0 0 38px #39f38b55;
+}
+
+.nav-badge, .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 15px;
+  border: 1px solid #49f59a35;
+  border-radius: 50px;
+  color: var(--mint);
+  background: #49f59a0b;
+  font-size: 12px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green);
+  animation: pulse 2s infinite;
+}
+
+.hero {
+  text-align: center;
+  padding: 78px 0 48px;
+  animation: reveal .8s ease both;
+}
+
+h1 {
+  margin: 23px 0 16px;
+  font-size: clamp(38px, 6vw, 72px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1.35;
+}
+
+h1 span {
+  color: var(--green);
+  text-shadow: 0 0 40px #48f59a20;
+}
+
+.lead {
+  max-width: 600px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2.3;
+}
+
+.hero-line {
+  width: 80px;
+  height: 3px;
+  margin: 25px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  box-shadow: 0 0 20px #48f59a55;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 23px;
+  padding-bottom: 75px;
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  background: linear-gradient(145deg, #123623d9, #071c12e8);
+  box-shadow: 0 25px 80px #0002;
+  backdrop-filter: blur(18px);
+  animation: reveal .8s ease both;
+  transition: border-color .3s, box-shadow .3s;
+}
+
+.panel:before {
+  position: absolute;
+  top: 0;
+  right: 12%;
+  left: 12%;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, #8dffc3a0, transparent);
+}
+
+.panel:hover {
+  border-color: #49f59a55;
+  box-shadow: 0 25px 90px #0003, 0 0 35px #49f59a0d;
+}
+
+.form-panel { animation-delay: .12s; }
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.iconbox {
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #49f59a30;
+  border-radius: 16px;
+  color: var(--green);
+  background: #49f59a12;
+  font-size: 24px;
+}
+
+h2 { margin: 0 0 5px; font-size: 19px; font-weight: 800; }
+
+.sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.info-list { display: grid; gap: 13px; }
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #ffffff0b;
+  border-radius: 17px;
+  background: #ffffff04;
+  transition: transform .28s, background .28s, border-color .28s;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  border-color: #49f59a50;
+  background: #49f59a09;
+}
+
+.mini {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: var(--green);
+  background: #49f59a12;
+  font-size: 19px;
+}
+
+.info-card strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.info-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  direction: ltr;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.note {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid #49f59a20;
+  border-radius: 18px;
+  color: #c4e6d1;
+  background: linear-gradient(120deg, #49f59a0d, #49f59a03);
+  font-size: 12px;
+  line-height: 2.2;
+}
+
+.note b { color: var(--green); }
+
+form { display: grid; gap: 17px; }
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.full { grid-column: 1 / -1; }
+
+label {
+  display: block;
+  margin-bottom: 9px;
+  color: #d5e8dc;
+  font-size: 12px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 13px 14px;
+  outline: none;
+  border: 1px solid #ffffff16;
+  border-radius: 13px;
+  color: var(--text);
+  background: #06170f;
+  font-size: 12px;
+  transition: border-color .25s, box-shadow .25s, background .25s;
+}
+
+input::placeholder, textarea::placeholder { color: #708b7b; }
+
+input:focus, select:focus, textarea:focus {
+  border-color: #49f59a95;
+  background: #081d12;
+  box-shadow: 0 0 0 4px #49f59a0d;
+}
+
+select { cursor: pointer; }
+select option { background: #0b2115; }
+
+textarea {
+  min-height: 145px;
+  resize: vertical;
+  line-height: 2;
+}
+
+.submit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 15px 20px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 14px;
+  color: #052013;
+  background: linear-gradient(105deg, #28d97b, #9bffc2);
+  box-shadow: 0 10px 30px #49f59a20;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.submit:before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 55%;
+  height: 100%;
+  content: "";
+  transform: skewX(-20deg);
+  background: linear-gradient(90deg, transparent, #ffffff70, transparent);
+  transition: left .65s;
+}
+
+.submit:hover:before { left: 150%; }
+
+.submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 38px #49f59a35;
+}
+
+.hint {
+  margin: 0;
+  color: #789583;
+  font-size: 10px;
+  line-height: 2;
+  text-align: center;
+}
+
+.toast {
+  display: none;
+  padding: 13px 15px;
+  border: 1px solid #49f59a30;
+  border-radius: 13px;
+  color: var(--mint);
+  background: #49f59a0b;
+  font-size: 12px;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
+.toast.show { display: block; animation: reveal .3s ease both; }
+
+footer {
+  padding: 25px 0;
+  border-top: 1px solid var(--border);
+  color: #789583;
+  font-size: 11px;
+  text-align: center;
+  line-height: 2;
+}
+
+footer span { color: var(--green); }
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  to { transform: translate(70px, -45px) scale(1.2); }
+}
+
+@keyframes pulse {
+  50% { box-shadow: 0 0 17px var(--green); }
+}
+
+@media (max-width: 760px) {
+  .hero { padding: 58px 0 36px; }
+  .layout { grid-template-columns: 1fr; padding-bottom: 45px; }
+  .contact-panel { order: 2; }
+  .form-panel { order: 1; }
+  .panel { padding: 24px; }
+  .brand { font-size: 18px; }
+  .nav-badge { font-size: 10px; }
+}
+
+@media (max-width: 430px) {
+  .container { width: calc(100% - 24px); }
+  nav { height: 72px; }
+  .logo { width: 39px; height: 39px; }
+  .fields { grid-template-columns: 1fr; }
+  .full { grid-column: auto; }
+  .panel { padding: 19px; border-radius: 21px; }
+  h1 { letter-spacing: -1px; }
+  .lead { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="background" aria-hidden="true">
+  <div class="grid"></div>
+  <div class="orb a"></div>
+  <div class="orb b"></div>
+</div>
+
+<div class="container">
+  <nav>
+    <a class="brand" href="#" aria-label="صفحه اصلی ROBOCIT">
+      <div class="logo">✳</div>
+      <span>ROBOCIT</span>
+    </a>
+    <div class="nav-badge">
+      <span class="dot"></span>
+      همیشه در دسترس
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      ارتباط مستقیم با ما
+    </div>
+    <h1>بیایید با هم<br><span>در ارتباط باشیم.</span></h1>
+    <p class="lead">
+      ایده‌ای داری؟ سؤالی ذهنت رو مشغول کرده؟ یا می‌خوای با ROBOCIT همکاری کنی؟
+      پیامت رو برامون بفرست؛ خوشحال می‌شیم ازت بشنویم.
+    </p>
+    <div class="hero-line"></div>
+  </header>
+
+  <main class="layout">
+    <section class="panel contact-panel">
+      <div class="panel-head">
+        <div class="iconbox">⌁</div>
+        <div>
+          <h2>راه‌های ارتباطی</h2>
+          <p class="sub">از راه‌های زیر با ما در ارتباط باش.</p>
+        </div>
+      </div>
+
+      <div class="info-list">
+        <a class="info-card" href="mailto:kiaradx92@gmail.com">
+          <div class="mini">✉</div>
+          <div>
+            <strong>ایمیل</strong>
+            <small>kiaradx92@gmail.com</small>
+          </div>
+        </a>
+
+        <a class="info-card" href="https://www.aparat.com/" target="_blank" rel="noopener noreferrer">
+          <div class="mini">▶</div>
+          <div>
+            <strong>کانال آپارات</strong>
+            <small>ROBOCIT</small>
+          </div>
+        </a>
+
+        <div class="info-card">
+          <div class="mini">◷</div>
+          <div>
+            <strong>زمان پاسخ‌گویی</strong>
+            <small>در اولین فرصت به پیامت پاسخ می‌دهیم</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>💚 همراه ROBOCIT باش!</b><br>
+        نظرات و پیشنهادهای تو به ما کمک می‌کنه بهتر بشیم.
+      </div>
+    </section>
+
+    <section class="panel form-panel">
+      <div class="panel-head">
+        <div class="iconbox">↗</div>
+        <div>
+          <h2>پیامت رو بفرست</h2>
+          <p class="sub">فرم رو کامل کن تا برنامه ایمیل رو با پیام آماده باز کنیم.</p>
+        </div>
+      </div>
+
+      <form id="contactForm">
+        <div class="fields">
+          <div>
+            <label for="name">نام شما</label>
+            <input id="name" name="name" placeholder="مثلاً علی" autocomplete="name" maxlength="100" required>
+          </div>
+
+          <div>
+            <label for="email">ایمیل شما</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" maxlength="200" required>
+          </div>
+
+          <div class="full">
+            <label for="subject">موضوع پیام</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>موضوع رو انتخاب کن...</option>
+              <option>پیشنهاد و انتقاد</option>
+              <option>همکاری</option>
+              <option>پشتیبانی</option>
+              <option>سؤال عمومی</option>
+              <option>سایر موارد</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label for="message">متن پیام</label>
+            <textarea id="message" name="message" placeholder="هر چیزی که دوست داری بهمون بگی، اینجا بنویس..." maxlength="5000" required></textarea>
+          </div>
+        </div>
+
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+        <button class="submit" type="submit">
+          باز کردن ایمیل برای ارسال <span>↙</span>
+        </button>
+
+        <p class="hint">
+          این فرم برنامه ایمیل شما را با متن آماده باز می‌کند؛ ارسال نهایی را خودتان تأیید می‌کنید.
+        </p>
+      </form>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="container">
+    راه های ارتباط
+  </div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  if (!this.reportValidity()) return;
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value.trim();
+
+  const body =
+    `نام: ${name}\n` +
+    `ایمیل پاسخ: ${email}\n` +
+    `موضوع: ${subject}\n\n` +
+    `متن پیام:\n${message}`;
+
+  const url =
+    'mailto:kiaradx92@gmail.com' +
+    '?subject=' + encodeURIComponent('[ROBOCIT] ' + subject) +
+    '&body=' + encodeURIComponent(body);
+
+  const toast = document.getElementById('toast');
+  toast.textContent =
+    'اگر برنامه ایمیل باز نشد، مستقیماً به kiaradx92@gmail.com ایمیل بزن.';
+  toast.classList.add('show');
+
+  window.location.href = url;
+});
+</script>
+</body>
+</html>
+```
