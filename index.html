@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROBOCIT</title>
+<style>
+  @font-face {
+    font-family: "pelasma";
+    src: url(./Plasma\ Font.ttf);
+  }
+  @font-face {
+    font-family: "majik";
+    src: url(./F_majik.ttf);
+  }
+  @font-face {
+    font-family: "ROBO";
+    src: url(./GILLUBCD.TTF);
+  }
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,sans-serif;background:#0b1110;color:#f3f7f4}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 8%;border-bottom:1px solid #263e34}
+.logo{font-size:25px;font-weight:bold;color:#75f0a0;letter-spacing:1px}
+nav a{color:#c6d4cb;text-decoration:none;margin-right:20px;font-size:14px}
+.hero{text-align:center;padding:100px 20px 75px;background:radial-gradient(ellipse at top,#183b2a 0%,#0b1110 65%)}
+.tag{color:#75f0a0;font-size:13px}
+h1{font-size:clamp(38px,7vw,68px);margin:22px 0}
+h1 span{color:#75f0a0}
+p{color:#a9bab0;line-height:2}
+.btn{display:inline-block;background:#75f0a0;color:#0b1710;padding:13px 25px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:30px}
+section{padding:35px 8% 65px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:#121c17;border:1px solid #263a2d;padding:25px;border-radius:16px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:#75f0a0}
+.card b{font-size:18px}
+.icon{font-size:28px;margin-bottom:16px}
+footer{text-align:center;padding:25px;color:#81968a;border-top:1px solid #26342e}
+@media(max-width:500px){header{padding:18px 5%}nav a{margin-right:10px;font-size:12px}.hero{padding-top:75px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo" , style="font-family: ROBO;">◈ ROBOCIT</div>
+  <nav style="font-family: majik;"><a href="Page(یادگیری).html" >یادگیری</a><a href="Page(پروژه ها).html">پروژه‌ها</a></nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="tag" , style="font-family: majik;">رباتیک • برنامه‌نویسی • خلاقیت</div>
+    <h1 style="font-family: majik;">آینده رو <span>بساز</span></h1>
+    <p  style="font-family: majik;">ایده‌هات رو به ربات‌ها و پروژه‌های واقعی تبدیل کن</p>
+    <a class="btn" href="https://www.aparat.com/ROBOCIT" ,  style="font-family: pelasma;">شروع ماجراجویی ↙</a>
+  </div>
+
+  <section id="learn">
+    <h2 style="font-family: majik;">چیز هایی که قراره یاد بگیری</h2>
+    <div class="cards" , style="font-family: majik;">
+      <div class="card"><div class="icon">🤖</div><b>رباتیک</b><p>از ایده تا ساخت ربات‌های هوشمند.</p></div>
+      <div class="card"><div class="icon">💻</div><b>کدنویسی</b><p>با کد، چیزهای شگفت‌انگیز بساز.</p></div>
+      <div class="card" id="projects"><div class="icon">⚡</div><b>الکترونیک</b><p>یادگیری اصولی سیم کشی.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 ROBOCIT — ساخته‌شده برای دوستداران رباتیک و برنامه نویسی</footer>
+</body>
+</html>
