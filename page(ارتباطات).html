@@ -456,6 +456,69 @@ footer span { color: var(--green); }
     scroll-behavior: auto !important;
   }
 }
+/* دکمه بازگشت ROBOCIT */
+.back-btn {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 23px;
+  border: 1px solid rgba(90, 255, 160, .45);
+  border-radius: 16px;
+  color: #eafff1;
+  background: linear-gradient(135deg, rgba(0, 255, 136, .20), rgba(0, 90, 50, .55));
+  box-shadow: 0 8px 25px rgba(0, 255, 136, .13),
+              inset 0 1px rgba(255, 255, 255, .12);
+  backdrop-filter: blur(12px);
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease,
+              background .3s ease, border-color .3s ease;
+  animation: backBtnAppear .7s ease both;
+}
+
+.back-btn:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(0, 255, 136, .34), rgba(0, 120, 65, .7));
+  border-color: #39ff9a;
+  box-shadow: 0 12px 32px rgba(0, 255, 136, .25);
+}
+
+.back-btn:active {
+  transform: scale(.94);
+}
+
+.back-btn .arrow {
+  display: inline-block;
+  font-size: 21px;
+  line-height: 1;
+  transition: transform .3s ease;
+}
+
+.back-btn:hover .arrow {
+  transform: translateX(5px);
+}
+
+@keyframes backBtnAppear {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 480px) {
+  .back-btn {
+    top: 14px;
+    right: 14px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
 </style>
 </head>
 
@@ -623,3 +686,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 });
 </script>
 </body>
+<a href="index.html" class="back-btn">
+  <span class="arrow">➜</span>
+  بازگشت
+</a>
